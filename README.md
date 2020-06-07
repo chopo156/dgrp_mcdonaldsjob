@@ -2,6 +2,8 @@
 A McDonalds Job for ESX. 
 Comes with Addon Building and Addon Vehicles.
 
+![Screenshot](https://i.imgur.com/0q6YWkF.jpg)
+
 ## Requirements
 - [es_extended(v1-final)](https://github.com/ESX-Org/es_extended/tree/v1-final)
 - [esx_menu_default](https://github.com/ESX-Org/esx_menu_default)
