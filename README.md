@@ -82,3 +82,23 @@ ESX.RegisterUsableItem('mcdonalds_meal', function(source)
 end)
 
 ```
+
+## Credits
+
+- [ribsosay - McDonalds Building](https://www.gta5-mods.com/maps/mcdonalds-building-with-interior-and-drive-through-v-0-01)
+- [frank_l59 - NRG Scooter](https://www.gta5-mods.com/vehicles/nrg-mc3)
+- [MOH-samtoxie - Model VW Caddy](https://www.gta5-mods.com/vehicles/addon-volkswagen-caddy-pizza-delivery-danish-dansk)
+- [FuryFight3r - Textures for Vehicles](https://github.com/FuryFight3r/)
+
+
+# Legal
+### License
+esx_mcdonaldsjob - McDonalds ESX Job
+
+Copyright (C) 2019-2020 DefectGaming - FuryFight3r
+
+This program Is free software: you can redistribute it And/Or modify it under the terms Of the GNU General Public License As published by the Free Software Foundation, either version 3 Of the License, Or (at your option) any later version.
+
+This program Is distributed In the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty Of MERCHANTABILITY Or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License For more details.
+
+You should have received a copy Of the GNU General Public License along with this program. If Not, see http://www.gnu.org/licenses/.
