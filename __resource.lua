@@ -35,6 +35,7 @@ dependency {
 	'esx_menu_default',
 	'esx_addonaccount',
 	'esx_addoninventory',
+	'esx_basicneeds',
 	'pNotify',
 	'progressBars'
 }
