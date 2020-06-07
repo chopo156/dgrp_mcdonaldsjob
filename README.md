@@ -1,8 +1,10 @@
 # esx_mcdonaldsjob
-A McDonalds Job for ESX. 
-Comes with Addon Building and Addon Vehicles.
-Multiple Roles: Cashier, Cook and Delivery Driver.
-All under 1 Addon!
+- A McDonalds Job for ESX. 
+- Comes with Addon Building and Addon Vehicles.
+- Multiple Roles: Cashier, Cook and Delivery Driver.
+- Extensive Config for easy customization.
+- All within 1 Addon!
+
 ![Logo](https://i.imgur.com/dA1Qe1d.png)
 ![Screenshot](https://i.imgur.com/0q6YWkF.jpg)
 
