@@ -3,13 +3,13 @@ A McDonalds Job for ESX.
 Comes with Addon Building and Addon Vehicles.
 
 ## Requirements
-- [es_extended(v1-final)] (https://github.com/ESX-Org/es_extended/tree/v1-final)
-- [esx_menu_default] (https://github.com/ESX-Org/esx_menu_default)
-- [esx_addonaccount] (https://github.com/ESX-Org/esx_addonaccount)
-- [esx_addoninventory] (https://github.com/ESX-Org/esx_addoninventory)
-- [esx_basicneeds] (https://github.com/ESX-Org/esx_basicneeds)
-- [pNotify] (https://github.com/Nick78111/pNotify)
-- [progressBars] (https://github.com/EthanPeacock/progressBars)
+- [es_extended(v1-final)](https://github.com/ESX-Org/es_extended/tree/v1-final)
+- [esx_menu_default](https://github.com/ESX-Org/esx_menu_default)
+- [esx_addonaccount](https://github.com/ESX-Org/esx_addonaccount)
+- [esx_addoninventory](https://github.com/ESX-Org/esx_addoninventory)
+- [esx_basicneeds](https://github.com/ESX-Org/esx_basicneeds)
+- [pNotify](https://github.com/Nick78111/pNotify)
+- [progressBars](https://github.com/EthanPeacock/progressBars)
 
 ## Download & Installation
 
