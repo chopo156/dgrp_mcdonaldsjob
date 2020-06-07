@@ -1,4 +1,4 @@
-# esx_mcdonaldsjob
+# dgrp_mcdonaldsjob
 - A McDonalds Job for ESX. 
 - Comes with Addon Building and Addon Vehicles.
 - Multiple Roles: Cashier, Cook and Delivery Driver all with animations.
@@ -95,7 +95,7 @@ end)
 
 # Legal
 ### License
-esx_mcdonaldsjob - McDonalds ESX Job
+dgrp_mcdonaldsjob - McDonalds ESX Job
 
 Copyright (C) 2019-2020 DefectGaming - FuryFight3r
 
