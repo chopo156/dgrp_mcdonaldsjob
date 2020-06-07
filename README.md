@@ -6,7 +6,7 @@
 - All within 1 Addon!
 
 ![Logo](https://i.imgur.com/dA1Qe1d.png)
-![Screenshot](https://i.imgur.com/0q6YWkF.jpg)
+![Screenshot](https://i.imgur.com/2bmybq8.png)
 
 ## Requirements
 - [es_extended(v1-final)](https://github.com/ESX-Org/es_extended/tree/v1-final)
