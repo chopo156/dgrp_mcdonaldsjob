@@ -3,10 +3,17 @@
 - Comes with Addon Building and Addon Vehicles.
 - Multiple Roles: Cashier, Cook and Delivery Driver all with animations.
 - Extensive Config for easy customization.
+- Comes with McDonalds Burgers, Drinks ECT.
+- Highly Customizable.
+- Excellent for RP.
 - All within 1 Addon!
+- Constantly updating and making better!
 
 ![Logo](https://i.imgur.com/dA1Qe1d.png)
 ![Screenshot](https://i.imgur.com/2bmybq8.png)
+
+## DISCLAIMER
+If you make changes to the addon please DO NOT re-upoad it without my permission. Create a pull request though GitHub and I will add it for everyone to download including credit to your part ofcourse.
 
 ## Requirements
 - [es_extended(v1-final)](https://github.com/ESX-Org/es_extended/tree/v1-final)
@@ -43,53 +50,12 @@ git clone https://github.com/FuryFight3r/esx_mcdonaldsjob [esx]/esx_mcdonaldsjob
 start esx_mcdonaldsjob
 ```
 
-### Add below code to esx_basicneeds/server/main.lua
-
-```lua
-ESX.RegisterUsableItem('mcdonalds_drink', function(source)
-	local xPlayer = ESX.GetPlayerFromId(source)
-	xPlayer.removeInventoryItem('mcdonalds_drink', 1)
-
-	TriggerClientEvent('esx_status:add', source, 'thirst', 200000)
-	TriggerClientEvent('esx_basicneeds:onDrink', source)
-	xPlayer.showNotification("~b~You drank a ~y~McDonalds ~b~ Drink.")
-end)
-
-ESX.RegisterUsableItem('mcdonalds_fries', function(source)
-	local xPlayer = ESX.GetPlayerFromId(source)
-	xPlayer.removeInventoryItem('mcdonalds_fries', 1)
-
-	TriggerClientEvent('esx_status:add', source, 'hunger', 50000)
-	TriggerClientEvent('esx_basicneeds:onEat', source)
-	xPlayer.showNotification("~b~You ate some ~y~McDonalds ~b~ Fries.")
-end)
-
-ESX.RegisterUsableItem('mcdonalds_burger', function(source)
-	local xPlayer = ESX.GetPlayerFromId(source)
-	xPlayer.removeInventoryItem('mcdonalds_burger', 1)
-
-	TriggerClientEvent('esx_status:add', source, 'hunger', 150000)
-	TriggerClientEvent('esx_basicneeds:onEat', source)
-	xPlayer.showNotification("~b~You ate a ~y~McDonalds ~b~ Burger.")
-end)
-
-ESX.RegisterUsableItem('mcdonalds_meal', function(source)
-	local xPlayer = ESX.GetPlayerFromId(source)
-	xPlayer.removeInventoryItem('mcdonalds_meal', 1)
-
-	TriggerClientEvent('esx_status:add', source, 'hunger', 200000)
-	TriggerClientEvent('esx_status:add', source, 'thirst', 200000)
-	TriggerClientEvent('esx_basicneeds:onEat', source)
-	xPlayer.showNotification("~b~You ate and drank a ~y~McDonalds ~b~Meal.")
-end)
-
-```
-
 ## Credits
 
 - [ribsosay - McDonalds Building](https://www.gta5-mods.com/maps/mcdonalds-building-with-interior-and-drive-through-v-0-01)
 - [frank_l59 - NRG Scooter](https://www.gta5-mods.com/vehicles/nrg-mc3)
 - [MOH-samtoxie - Model VW Caddy](https://www.gta5-mods.com/vehicles/addon-volkswagen-caddy-pizza-delivery-danish-dansk)
+- [Ashton324 - McDonalds Items](https://forum.cfx.re/t/release-esx-mcdonalds-items/1204906)
 - [FuryFight3r - Textures for Vehicles](https://github.com/FuryFight3r/)
 
 
