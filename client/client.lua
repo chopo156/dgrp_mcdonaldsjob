@@ -252,7 +252,7 @@ Citizen.CreateThread(function()
 	while true do																			
 		Citizen.Wait(1)
 		local playerCoords = GetEntityCoords(GetPlayerPed(-1))
-		if currentPlayerJobName == 'McDonalds' and playerIsInside(playerCoords, Config.JobMenuCoords, 5) then 
+		if currentPlayerJobName == 'McDonalds' and playerIsInside(playerCoords, Config.JobMenuCoords, 20) then 
 			displayMarker(Config.JobMenuCoords)
 		end
 		if onDuty and currentJob == 'cook' and playerIsInside(playerCoords, Config.JobMenuCoords, 100) then			
