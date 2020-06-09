@@ -9,8 +9,8 @@ Config.EnablePlayerCook		= true		--Cook gets drinks, makes burgers and fries and
 Config.EnablePlayerClerk	= true		--Clerk receives orders, gives to cook, receives orders from cook, and gives to customer. 				
 Config.EnablePlayerDriver	= true		--Driver delivers orders marked for delivery.
 
-Config.EnableNPCWorkers		= false		--NPC Workers are there if player jobs are disabled
-Config.EnableNPCOrders		= true		--MUST be false if player jobs are disabled, gives RP NPC orders for players to undertake
+Config.EnableNPCWorkers		= false		--NPC Workers are there if player jobs are disabled -- Coming Soon
+Config.EnableNPCOrders		= true		--MUST be false if player jobs are disabled, gives RP NPC orders for players to undertake -- Coming Soon
 
 Config.CookJobPay			= 50		--The amount the cook is paid per meal made.
 Config.CashJobPay			= 40		--The amount the cashier is paid per meal delivered to table.
@@ -32,7 +32,7 @@ Config.blipIDM				= 78						--ID
 Config.blipColorM			= 5							--Color
 Config.blipScaleM			= 0.75						--Size
 --	  McDonalds Job Blip	
-Config.EnableJobBlip		= false						--true means show to all players, false only shows to players who have Mcdonalds Job Title.
+Config.EnableJobBlip		= false						--true means show to all players, false only shows to players who have Mcdonalds Job Title and off alltogether if EnableBlips = false.
 
 Config.blipLocationJ		= vector2(138.78, -1060.86)	--Location
 Config.blipIDJ				= 500						--ID
@@ -55,10 +55,9 @@ Config.CashMealTime			= 15 * 1000		--The time that it takes to get a prepared me
 Config.CashDelivTime		= 5 * 1000		--The time that it takes to give the customer the meal.
 
 Config.EnableDowntownDeliveries		= true
-Config.EnableBeachSideDeliveries	= true
-Config.EnableHighEndDeliveries		= true
+Config.EnableBeachSideDeliveries	= false	--Coming Soon
+Config.EnableHighEndDeliveries		= false	--Coming Soon
 
-Config.Prefix = "^0[^1DGRP ^3McDonalds^0]:^4 "
 
 --	   List of Coords
 
@@ -127,3 +126,5 @@ Config.driveDeliveryPoints = {
 	[18] = {x = 302.63, y = -2080.1, z = 17.7},
 	[19] = {x = 321.55, y = -2099.77, z = 18.2}
 }
+
+Config.Prefix = "^0[^1DGRP ^3McDonalds^0]:^4 "

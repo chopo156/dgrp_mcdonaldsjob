@@ -1,10 +1,27 @@
 ESX = nil
-				
+
+local currentPlayerJobName  = 'none'
+local PlayerData
+local jobTitle = 'McDonalds'
+
 Citizen.CreateThread(function()
 	while ESX == nil do
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(1)
+		Citizen.Wait(0)
 	end
+	
+	while ESX.GetPlayerData().job == nil do
+        print("ESX.GetPlayerData().job = nil, waiting until not nil..")
+		Citizen.Wait(100)
+	end
+
+    if currentPlayerJobName == jobTitle then
+        refreshBlips()
+    end
+
+	PlayerData = ESX.GetPlayerData()
+    currentPlayerData = PlayerData
+	refreshBlips()
 end)
 
 local isInMarker = false
@@ -13,10 +30,8 @@ local vehcileMenuIsOpen = false
 local hintToDisplay = "no hint to display"
 local displayHint = false
 local currentZone = 'none'
-local currentPlayerJobName = 'none'
 local currentJob = 'none'
 local currentPlayerData = {}
-local jobTitle = 'McDonalds'
 local playerPed = PlayerPedId()
 
 local invDrink = 0
@@ -186,9 +201,26 @@ AddEventHandler('esx:playerLoaded', function(xPlayer)
         print("Couldnt Load Config")
     else
         if Config.EnableBlips == true then
-            refreshBlips()
+            while currentPlayerData.job == jobTitle and jBlipsCreated == 0 do
+                refreshBlips()
+                Citizen.Wait(100)
+            end
         end
     end								
+end)
+
+RegisterNetEvent('esx:getJob')
+AddEventHandler('esx:getJob', function(job)
+    currentPlayerData.job = job
+    currentPlayerJobName = job.name
+    if job.name == jobTitle then 
+        onDuty = true
+        print("Player Has Started Work at "..jobTitle..": onDuty = true")
+    else
+        onDuty = false
+        print("Title "..jobTitle.." not found! onDuty = false")
+    end
+    refreshBlips()						
 end)
 
 RegisterNetEvent('esx:setJob')
@@ -202,7 +234,6 @@ AddEventHandler('esx:setJob', function(job)
         onDuty = false
         print("Title "..jobTitle.." not found! onDuty = false")
     end
-    deleteBlips()
     refreshBlips()						
 end)
 --Hint to Display
@@ -685,67 +716,88 @@ local jBlipsCreated = 0
 
 function deleteBlips()
     print(Config.Prefix.."Deleting Blips")
-    RemoveBlip(blipM)
-    mBlipsCreated = mBlipsCreated - 1
-    if blipM ~= nil then
+    while blipM ~= nil do
+        print(Config.Prefix.."blipM is still active, attempting to remove.")
         RemoveBlip(blipM)
         mBlipsCreated = mBlipsCreated - 1
+        Citizen.Wait(100)
     end
-    RemoveBlip(blipJ)
-    jBlipsCreated = jBlipsCreated - 1
-    if blipJ ~= nil then
+    while blipJ ~= nil do
+        print(Config.Prefix.."blipJ is still active, attempting to remove.")
         RemoveBlip(blipJ)
         jBlipsCreated = jBlipsCreated - 1
+        Citizen.Wait(100)
+    end
+    while mBlipsCreated > 1 do
+        RemoveBlip(blipM)
+        mBlipsCreated = mBlipsCreated - 100
+        Citizen.Wait(100)
+    end
+    while jBlipsCreated > 1 do
+        RemoveBlip(blipJ)
+        jBlipsCreated = jBlipsCreated - 100
+        Citizen.Wait(100)
     end
     showingBlips = false
+    if Config.EnableBlips == true and showingBlips == false and mBlipsCreated == 0 and jBlipsCreated == 0 then
+        refreshBlips()
+    elseif showingBlips == false and blipJ ~= nil and blipM ~= nil then
+        deleteBlips()
+    end
 end
 
 function refreshBlips()
     print(Config.Prefix.."Refreshing Blips")
     if showingBlips == false then
-        print(Config.Prefix.."Currently Showing Blips = false (Creating M Blip)")
-        local blipM = AddBlipForCoord(Config.blipLocationM.x, Config.blipLocationM.y)
+        if mBlipsCreated == 0 then
+            print(Config.Prefix.."Currently Showing Blips = false (Creating M Blip)")
+            local blipM = AddBlipForCoord(Config.blipLocationM.x, Config.blipLocationM.y)
 
-        SetBlipSprite(blipM, Config.blipIDM)
-        SetBlipDisplay(blipM, 6)
-        SetBlipScale(blipM, Config.blipScaleM)
-        SetBlipColour(blipM, Config.blipColorM)
-        BeginTextCommandSetBlipName('STRING')
-        AddTextComponentString("~y~Mc~r~Donald~y~'~r~s")
-        EndTextCommandSetBlipName(blipM)
-        mBlipsCreated = mBlipsCreated + 1
-        if currentPlayerJobName == jobTitle and Config.EnableJobBlip == false then
-            print(Config.Prefix.."Job Title = "..jobTitle.." and Config.EnableJobBlip = false (Creating Job Blip)")
-            local blipJ = AddBlipForCoord(Config.blipLocationJ.x, Config.blipLocationJ.y)
-            jBlipsCreated = jBlipsCreated + 1
-            SetBlipSprite(blipJ, Config.blipIDJ)
-            SetBlipDisplay(blipJ, 6)
-            SetBlipScale(blipJ, Config.blipScaleJ)
-            SetBlipColour(blipJ, Config.blipColorJ)
-            SetBlipAsShortRange(blip, true)
-
+            SetBlipSprite(blipM, Config.blipIDM)
+            SetBlipDisplay(blipM, 6)
+            SetBlipScale(blipM, Config.blipScaleM)
+            SetBlipColour(blipM, Config.blipColorM)
             BeginTextCommandSetBlipName('STRING')
-            AddTextComponentString("~y~Mc~r~Donalds ~y~Job ~r~Selection")
-            EndTextCommandSetBlipName(blipJ)
-        elseif Config.EnableJobBlip == true then
-            print(Config.Prefix.."Config.EnableJobBlip = true (Showing Job Marker for ^2EVERYONE!^4)")
-            local blipJ = AddBlipForCoord(Config.blipLocationJ.x, Config.blipLocationJ.y)
+            AddTextComponentString("~y~Mc~r~Donald~y~'~r~s")
+            EndTextCommandSetBlipName(blipM)
             mBlipsCreated = mBlipsCreated + 1
-            SetBlipSprite(blipJ, Config.blipIDJ)
-            SetBlipDisplay(blipJ, 6)
-            SetBlipScale(blipJ, Config.blipScaleJ)
-            SetBlipColour(blipJ, Config.blipColorJ)
-            SetBlipAsShortRange(blip, true)
+        end
+        print(Config.Prefix.."Current Player Job Name is: "..ESX.GetPlayerData().job.name)
+        if ESX.GetPlayerData().job.name == jobTitle and Config.EnableJobBlip == false then
+            if jBlipsCreated == 0 then
+                print(Config.Prefix.."Job Title = "..jobTitle.." and Config.EnableJobBlip = false (Creating Job Blip)")
+                local blipJ = AddBlipForCoord(Config.blipLocationJ.x, Config.blipLocationJ.y)
+                jBlipsCreated = jBlipsCreated + 1
+                SetBlipSprite(blipJ, Config.blipIDJ)
+                SetBlipDisplay(blipJ, 6)
+                SetBlipScale(blipJ, Config.blipScaleJ)
+                SetBlipColour(blipJ, Config.blipColorJ)
+                SetBlipAsShortRange(blip, true)
 
-            BeginTextCommandSetBlipName('STRING')
-            AddTextComponentString("~y~Mc~r~Donalds ~y~Job ~r~Selection")
-            EndTextCommandSetBlipName(blipJ)
+                BeginTextCommandSetBlipName('STRING')
+                AddTextComponentString("~y~Mc~r~Donalds ~y~Job ~r~Selection")
+                EndTextCommandSetBlipName(blipJ)
+            end
+        elseif Config.EnableJobBlip == true then
+            if jBlipsCreated == 0 then
+                print(Config.Prefix.."Config.EnableJobBlip = true (Showing Job Marker for ^2EVERYONE!^4)")
+                local blipJ = AddBlipForCoord(Config.blipLocationJ.x, Config.blipLocationJ.y)
+                mBlipsCreated = mBlipsCreated + 1
+                SetBlipSprite(blipJ, Config.blipIDJ)
+                SetBlipDisplay(blipJ, 6)
+                SetBlipScale(blipJ, Config.blipScaleJ)
+                SetBlipColour(blipJ, Config.blipColorJ)
+                SetBlipAsShortRange(blip, true)
+
+                BeginTextCommandSetBlipName('STRING')
+                AddTextComponentString("~y~Mc~r~Donalds ~y~Job ~r~Selection")
+                EndTextCommandSetBlipName(blipJ)
+            end
         end
         showingBlips = true
     else
         print(Config.Prefix.."Currently Showing Blips = true (Deleting Blips)")
         deleteBlips()
-        refreshBlips()
     end
     print(Config.Prefix.."Currently Showing "..mBlipsCreated.." 'M' Blips and "..jBlipsCreated.." '$' Blips Created")
 end
