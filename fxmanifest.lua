@@ -1,19 +1,33 @@
-resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
+fx_version 'adamant'
 
-version '0.1'
+game 'gta5'
+
+description 'DGRP McDonalds Job'
+
+version '1.1'
 
 this_is_a_map 'yes'
 
-client_scripts {
-	--'locale.lua',
-	--'locales/en.lua',
-	--'locales/fr.lua',
-	'client/client.lua',
-	'config.lua'
+server_scripts {
+	'@es_extended/locale.lua',
+	'locales/en.lua',
+	'locales/fr.lua',
+	'config.lua',
+	'server/server.lua',
 }
 
-server_scripts {
-	'server/server.lua'
+client_scripts {
+	'@es_extended/locale.lua',
+	'locales/en.lua',
+	'locales/fr.lua',
+	'config.lua',
+	'client/client.lua'
+}
+dependencies {
+	'es_extended',
+	'esx_basicneeds',
+	'pNotify',
+	'progressBars'
 }
 
 files {
@@ -29,13 +43,3 @@ data_file 'VEHICLE_VARIATION_FILE' 'stream/McDonaldsVan/CarData/carvariations.me
 data_file 'DLCTEXT_FILE' 'stream/McDonaldsVan/CarData/dlctext.meta'
 data_file 'HANDLING_FILE' 'stream/McDonaldsVan/CarData/handling.meta'
 data_file 'VEHICLE_METADATA_FILE' 'stream/McDonaldsVan/CarData/vehicles.meta'
-
-dependency {
-	'es_extended',
-	'esx_menu_default',
-	'esx_addonaccount',
-	'esx_addoninventory',
-	'esx_basicneeds',
-	'pNotify',
-	'progressBars'
-}
