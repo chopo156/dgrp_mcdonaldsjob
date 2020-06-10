@@ -56,7 +56,7 @@ start esx_mcdonaldsjob
 - [Ashton324 - McDonalds Items](https://forum.cfx.re/t/release-esx-mcdonalds-items/1204906)
 - [frank_l59 - NRG Scooter](https://www.gta5-mods.com/vehicles/nrg-mc3)
 - [MOH-samtoxie - Model VW Caddy](https://www.gta5-mods.com/vehicles/addon-volkswagen-caddy-pizza-delivery-danish-dansk)
-- [FuryFight3r - Textures for Vehicles](https://github.com/FuryFight3r/)
+- [FuryFight3r - Textures for Vehicles and Scriptwork](https://github.com/FuryFight3r/)
 
 
 # Legal
