@@ -39,7 +39,7 @@ git clone https://github.com/FuryFight3r/esx_mcdonaldsjob [esx]/esx_mcdonaldsjob
 
 ### Manually
 - Download https://github.com/FuryFight3r/esx_mcdonaldsjob/archive/master.zip
-- Put it in the `[esx]` directory
+- Put it in `[dgrp]` directory
 
 
 ## Installation
