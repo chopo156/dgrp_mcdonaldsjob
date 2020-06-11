@@ -76,13 +76,13 @@ Citizen.CreateThread(function()
 		Citizen.Wait(2)					
 		if not menuIsOpen then
 			local playerCoords = GetEntityCoords(GetPlayerPed(-1))
-            if currentPlayerJobName ~= nil then
+            if currentPlayerJobName ~= nil then														
 			    if  playerIsInside(playerCoords, Config.JobMenuCoords, Config.JobMarkerDistance) then 				
-			    	isInMarker = true
-			    	displayHint = true																
-			    	hintToDisplay = _U('JobListMarker')									
-			    	currentZone = 'JobList'																
-			    elseif  playerIsInside(playerCoords, Config.CookBurgerCoords, Config.JobMarkerDistance) and currentJob == 'cook' then 				
+			        isInMarker = true
+			        displayHint = true																
+			        hintToDisplay = _U('JobListMarker')									
+			        currentZone = 'JobList'	
+                elseif  playerIsInside(playerCoords, Config.CookBurgerCoords, Config.JobMarkerDistance) and currentJob == 'cook' then 				
 			    	isInMarker = true
 			    	displayHint = true																
 			    	hintToDisplay = _U('CookBurger')									
@@ -230,7 +230,7 @@ end)
 Citizen.CreateThread(function()
     while true do										
     Citizen.Wait(1)
-        if displayHint and onDuty then							
+        if displayHint then							
             SetTextComponentFormat("STRING")				
             AddTextComponentString(hintToDisplay)			
             DisplayHelpTextFromStringLabel(0, 0, 1, -1)	
