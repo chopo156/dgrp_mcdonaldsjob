@@ -750,7 +750,7 @@ function refreshBlips()
                     SetBlipAsShortRange(blip, true)
 
                     BeginTextCommandSetBlipName('STRING')
-                    AddTextComponentString(_U('McDoanaldsJobBlip'))
+                    AddTextComponentString(_U('McDonaldsJobBlip'))
                     EndTextCommandSetBlipName(blipJ)
                 end
             elseif Config.EnableJobBlip == true then
@@ -764,7 +764,7 @@ function refreshBlips()
                     SetBlipAsShortRange(blip, true)
 
                     BeginTextCommandSetBlipName('STRING')
-                    AddTextComponentString(_U('McDoanaldsJobBlip'))
+                    AddTextComponentString(_U('McDonaldsJobBlip'))
                     EndTextCommandSetBlipName(blipJ)
                 end
             end
