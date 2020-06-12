@@ -13,7 +13,7 @@ server_scripts {
 	'locales/en.lua',
 	'locales/fr.lua',
 	'config.lua',
-	'server/server.lua',
+	'server/server.lua'
 }
 
 client_scripts {
@@ -23,14 +23,14 @@ client_scripts {
 	'config.lua',
 	'client/client.lua'
 }
-dependencies {
-	'es_extended',
-	'esx_basicneeds',
-	'pNotify',
-	'progressBars'
-}
+
+--ui_page 'html/ui.html'		--Work In Progress
 
 files {
+	--'html/ui.html',			--Work In Progress
+	--'html/css/reset.css',		--Work In Progress
+	--'html/css/style.css',		--Work In Progress
+	--'html/js/listener.js'		--Work In Progress
     'stream/McDonaldsVan/CarData/vehicles.meta',
     'stream/McDonaldsVan/CarData/carvariations.meta',
     'stream/McDonaldsVan/CarData/handling.meta',
@@ -43,3 +43,10 @@ data_file 'VEHICLE_VARIATION_FILE' 'stream/McDonaldsVan/CarData/carvariations.me
 data_file 'DLCTEXT_FILE' 'stream/McDonaldsVan/CarData/dlctext.meta'
 data_file 'HANDLING_FILE' 'stream/McDonaldsVan/CarData/handling.meta'
 data_file 'VEHICLE_METADATA_FILE' 'stream/McDonaldsVan/CarData/vehicles.meta'
+
+dependencies {
+	'es_extended',
+	'esx_basicneeds',
+	'pNotify',
+	'progressBars'
+}
