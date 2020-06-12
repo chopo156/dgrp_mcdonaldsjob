@@ -13,7 +13,7 @@
 ![Screenshot](https://i.imgur.com/2bmybq8.png)
 
 ## DISCLAIMER
-If you make changes to the addon please DO NOT re-upoad it without my permission. Create a pull request though GitHub and I will add it for everyone to download including credit to your part ofcourse.
+If you make changes to the addon please DO NOT re-upoad (and claim as your own work) without my permission. Instead Create a pull request though GitHub and I will add it for everyone to download including credit to your part ofcourse.
 
 ## Requirements
 - [es_extended(v1-final)](https://github.com/ESX-Org/es_extended/tree/v1-final)
@@ -28,17 +28,17 @@ If you make changes to the addon please DO NOT re-upoad it without my permission
 
 ### Using [fvm](https://github.com/qlaffont/fvm-installer)
 ```
-fvm install --save --folder=esx esx-org/esx_mcdonaldsjob
+fvm install --save --folder=dgrp FuryFight3r/dgrp_mcdonaldsjob
 ```
 
 ### Using Git
 ```
 cd resources
-git clone https://github.com/FuryFight3r/esx_mcdonaldsjob [esx]/esx_mcdonaldsjob
+git clone https://github.com/FuryFight3r/dgrp_mcdonaldsjob [dgrp]/dgrp_mcdonaldsjob
 ```
 
 ### Manually
-- Download https://github.com/FuryFight3r/esx_mcdonaldsjob/archive/master.zip
+- Download https://github.com/FuryFight3r/dgrp_mcdonaldsjob/archive/master.zip
 - Put it in `[dgrp]` directory
 
 
@@ -47,7 +47,7 @@ git clone https://github.com/FuryFight3r/esx_mcdonaldsjob [esx]/esx_mcdonaldsjob
 - Add this in your server.cfg :
 
 ```
-start esx_mcdonaldsjob
+start dgrp_mcdonaldsjob
 ```
 
 ## Credits
