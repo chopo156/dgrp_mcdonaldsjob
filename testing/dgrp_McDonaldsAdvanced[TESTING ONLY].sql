@@ -15,7 +15,7 @@ INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`) 
 (NULL, 'McDonalds', 1, 'McCashier', 	'Mc Cashier', 250),
 (NULL, 'McDonalds', 2, 'McCook', 		'Mc Cook', 250),
 (NULL, 'McDonalds', 3, 'McDelivery', 	'Mc Delivery Driver', 250),
-(NULL, 'McDonalds', 4, 'McBoss', 		'Mc Boss', 350)
+(NULL, 'McDonalds', 4, 'McBoss', 		'Mc Boss', 350);
 
 --
 -- items
@@ -54,4 +54,4 @@ INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
 ('MCDS_AMERICANO', 			'Americano', 					 1, 0, 1),
 ('MCDS_MOCHA', 				'Mocha', 						 1, 0, 1),
 ('MCDS_HOTCHOC', 				'Hot Chocolate',			  	 1, 0, 1),
-('MCDS_CHICKENSPECIAL', 	'Grande Chicken Special', 	 1, 0, 1)
+('MCDS_CHICKENSPECIAL', 	'Grande Chicken Special', 	 1, 0, 1);
