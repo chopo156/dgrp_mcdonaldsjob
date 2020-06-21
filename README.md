@@ -9,6 +9,9 @@
 - All within 1 Addon!
 - Constantly updating and making better!
 
+You Can Checkout the Release Post Here:
+[forum.CFX.RE - DGRP_McDonalds](https://forum.cfx.re/t/release-dgrp-mcdonaldsjob-a-fast-food-restaurant-job-for-esx)
+
 ![Logo](https://i.imgur.com/dA1Qe1d.png)
 ![Screenshot](https://i.imgur.com/2bmybq8.png)
 
